@@ -2,3 +2,4 @@
 *.odp
 *.class
 *#
+**/emails-recus/
