@@ -5,8 +5,6 @@ import java.util.logging.Logger;
 
 import javax.validation.Valid;
 
-import org.formation.client.Courriel;
-import org.formation.client.NotificationClient;
 import org.formation.repository.Member;
 import org.formation.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,6 @@ public class MembersController {
 
 	protected Logger logger = Logger.getLogger(MembersController.class.getName());
 	protected MemberRepository memberRepository;
-	protected NotificationClient notificationClient;
 
 	/**
 	 * Create an instance plugging in the respository of Members.
@@ -35,9 +32,9 @@ public class MembersController {
 	 *            An Member repository implementation.
 	 */
 	@Autowired
-	public MembersController(MemberRepository memberRepository, NotificationClient notificationClient) {
+	public MembersController(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
-		this.notificationClient = notificationClient;
+//		this.notificationClient = notificationClient;
 
 		logger.info("MemberRepository says system has " + memberRepository.countMembers() + " Members");
 	}
