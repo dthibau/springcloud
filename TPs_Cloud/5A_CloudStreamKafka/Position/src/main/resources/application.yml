@@ -5,9 +5,6 @@ spring:
         binder:
           brokers: kafka
       bindings:
-#        greetings-in:
-#          destination: greetings
-#          contentType: application/json
         positions-out:
           destination: position
           contentType: application/json          
