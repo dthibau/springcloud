@@ -16,8 +16,8 @@ services:
     restart: always
     depends_on:
       - config
-  documents:
-    build: ./documents/
+  delivery-service:
+    build: ./delivery-service/
     networks:
      - back
     restart: always
@@ -30,7 +30,7 @@ services:
     restart: always
     depends_on:
       - config
-  members:
+  orders-service:
     build: ./members/
     networks:
       - back
@@ -46,7 +46,7 @@ services:
       - config
     ports:
      - "5555:5555"
-  proxy:
+  gateway:
     build: ./proxy/
     networks:
       - front
