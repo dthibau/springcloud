@@ -30,7 +30,7 @@ public class PositionController {
         position.setTimestamp(System.currentTimeMillis());
 
         logger.info("Receiving position " + position);
-        positionService.sendGreeting(position);
+        positionService.sendPosition(position);
         
         return Mono.empty();
     }

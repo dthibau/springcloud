@@ -21,7 +21,7 @@ public class PositionService {
         this.positionsStreams = positionsStreams;
     }
 
-    public void sendGreeting(final Position position) {
+    public void sendPosition(final Position position) {
         log.info("Sending position " + position);
 
         MessageChannel messageChannel = positionsStreams.outboundPositions();
