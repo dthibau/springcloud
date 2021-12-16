@@ -24,8 +24,6 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @EnableEurekaClient
 public class NotificationServer {
 
-	@Autowired
-	MailConfiguration mailConfiguration;
 	
 	@Autowired
 	MailConfigurationProperties mailConfigurationProperties;
@@ -59,7 +57,7 @@ public class NotificationServer {
 	    props.put("mail.transport.protocol", "smtp");
 	    props.put("mail.smtp.auth", "true");
 	    props.put("mail.smtp.starttls.enable", "true");
-	    props.put("mail.debug", "true");
+	    props.put("mail.debug", "false");
 	     
 	    return mailSender;
 	}
