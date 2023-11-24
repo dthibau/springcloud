@@ -1,12 +1,11 @@
-package org.formation;
+package org.formation.service;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.formation.model.Client;
 import org.formation.model.Order;
 import org.formation.model.OrderItem;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,12 +14,10 @@ import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = OrderServiceApplication.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
 @AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.LOCAL, ids = "org.formation:delivery-service:0.0.8-SNAPSHOT:stubs")
@@ -32,7 +29,7 @@ public class OrderServiceIntegrationTests {
 	JacksonTester<Order> jsonOrder;
 
 	@Test
-	public void given_WhenPassEvenNumberInQueryParam_ThenReturnEven() throws Exception {
+	public void given_WhenCreateOrderNoException() throws Exception {
 
 		Order order = new Order();
 		Client client = new Client();

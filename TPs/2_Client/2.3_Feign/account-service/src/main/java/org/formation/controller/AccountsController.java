@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import javax.swing.Spring;
-import javax.validation.Valid;
-
 import org.formation.repository.Account;
 import org.formation.repository.AccountRepository;
 import org.formation.repository.Role;
@@ -17,7 +14,6 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import jakarta.validation.Valid;
 
 /**
  * A RESTFul controller for accessing Account information.
@@ -48,7 +46,7 @@ public class AccountsController {
 	RestTemplateBuilder restBuilder;
 
 	@Autowired
-	CircuitBreakerFactory cbFactory;
+	CircuitBreakerFactory<?, ?> cbFactory;
 
 	public AccountsController(AccountRepository accountRepository, RoleRepository roleRepository) {
 		this.accountRepository = accountRepository;

@@ -2,17 +2,15 @@ package org.formation.repository;
 
 import java.util.List;
 
+import org.aspectj.lang.annotation.Before;
 import org.formation.model.Livraison;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
 public class LivraisonRepositoryTest {
 
@@ -26,7 +24,7 @@ public class LivraisonRepositoryTest {
     private LivraisonRepository repository;
     
     
-    @Before
+    @BeforeEach
     public void setup() {
       
     	Livraison l = new Livraison();

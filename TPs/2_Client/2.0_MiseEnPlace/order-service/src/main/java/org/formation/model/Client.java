@@ -1,4 +1,4 @@
-package org.formation.repository;
+package org.formation.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,13 +8,10 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Role {
-	
-	public static String USER="ROLE_USER";
-	public static String CUSTOMER="ROLE_CUSTOMER";
-	
+public class Client {
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	private String name;
+	private String prenom, nom;
+	private String email;
 }

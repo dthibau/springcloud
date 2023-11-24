@@ -7,22 +7,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
+import org.aspectj.lang.annotation.Before;
 import org.formation.model.Livraison;
 import org.formation.repository.LivraisonRepository;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(value=LivraisonResource.class)
 public class LivraisonResourceTest {
 
@@ -39,7 +37,7 @@ public class LivraisonResourceTest {
 	
 	public static String API_PREFIX="/api/livraison";
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		aLivraison = new Livraison();
 		aLivraison.setId(1);
